@@ -17,10 +17,10 @@
         <div class="z-50">
             <h1 class="font-bold text-cyan-500 text-4xl">LOGIN</h1>
             <p class="font-semibold my-4">Enter your personal details and start journey with us </p>
-            <form action="" class="mt-10">
+            <form action="<?php echo base_url(); ?>Auth/aksi_login" method='post' class="mt-10">
                 <div>
-                    <label for="username" class="font-semibold">Username</label><br>
-                    <input type="text" id="username" name="username" required class="block rounded-sm p-2 w-full my-2 bg-gray-100 focus:outline-none focus:ring focus:ring-cyan-300" placeholder="user_name">
+                    <label for="email" class="font-semibold">Email</label><br>
+                    <input type="text" id="email" name="email" required class="block rounded-sm p-2 w-full my-2 bg-gray-100 focus:outline-none focus:ring focus:ring-cyan-300" placeholder="user_name">
                 </div>
                 <div class="relative">
                     <label for="password" class="font-semibold">Password</label><br>
