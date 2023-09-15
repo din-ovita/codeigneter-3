@@ -27,6 +27,7 @@
                     <th class="border py-3">Nama</th>
                     <th class="border py-3">Gender</th>
                     <th class="border py-3">NISN</th>
+                    <th class="border py-3">Kelas</th>
                     <th class="border py-3">Aksi</th>
                 </tr>
                 <?php $int = 0;
@@ -36,15 +37,25 @@
                         <td class="border py-3 px-3"><?= $row->nama_siswa ?></td>
                         <td class="border py-3 px-3"><?= $row->gender ?></td>
                         <td class="border py-3 px-3"><?= $row->nisn ?></td>
+                        <td class="border py-3 px-3"> <?php echo tampil_full_kelas_byid($row->id_kelas) ?>
+                        </td>
                         <td class="border py-3 flex items-center justify-center gap-4">
                             <a href="#" class="py-1 px-4 bg-blue-500 text-gray-50">Update</a>
-                            <button class="py-1 px-4 bg-red-500 text-gray-50">Delete</button>
+                            <button class="py-1 px-4 bg-red-500 text-gray-50" onclick="hapus(<?php echo $row->id_siswa?>)">Delete</button>
                         </td>
                     </tr>
                 <?php endforeach; ?>
             </table>
         </div>
     </div>
+    <script>
+        function hapus(id) {
+            var yes = confirm('Sure Deleted?');
+            if (yes == true) {
+                window.location.href = '<?php echo base_url('admin/hapus_siswa/') ?>' + id;
+            }
+        }
+    </script>
 </body>
 
 </html>
