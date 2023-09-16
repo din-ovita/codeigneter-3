@@ -40,8 +40,8 @@
                         <td class="border py-3 px-3"> <?php echo tampil_full_kelas_byid($row->id_kelas) ?>
                         </td>
                         <td class="border py-3 flex items-center justify-center gap-4">
-                            <a href="#" class="py-1 px-4 bg-blue-500 text-gray-50">Update</a>
-                            <button class="py-1 px-4 bg-red-500 text-gray-50" onclick="hapus(<?php echo $row->id_siswa?>)">Delete</button>
+                            <a href="<?php echo base_url('admin/ubah_siswa/') . $row->id_siswa ?>" class="py-1 px-4 bg-blue-500 text-gray-50">Update</a>
+                            <button class="py-1 px-4 bg-red-500 text-gray-50" onclick="hapus(<?php echo $row->id_siswa ?>)">Delete</button>
                         </td>
                     </tr>
                 <?php endforeach; ?>

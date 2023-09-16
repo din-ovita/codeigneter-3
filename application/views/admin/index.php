@@ -23,28 +23,28 @@
             <div class="bg-cyan-500 rounded-md py-6 px-4">
                 <div>
                     <p class="text-white text-lg font-lg font-semibold">Jumlah Kelas</p>
-                    <p class="mt-5 font-bold text-2xl text-white">1</p>
+                    <p class="mt-5 font-bold text-2xl text-white"><?php echo $kelas ?></p>
                 </div>
                 <!-- <i class="fas fa-user"> -->
             </div>
             <div class="bg-cyan-500 rounded-md py-6 px-4">
                 <div>
                     <p class="text-white text-lg font-lg font-semibold">Jumlah Siswa</p>
-                    <p class="mt-5 font-bold text-2xl text-white">1</p>
+                    <p class="mt-5 font-bold text-2xl text-white"><?php echo $siswa ?></p>
                 </div>
                 <!-- <i class="fas fa-user"> -->
             </div>
             <div class="bg-cyan-500 rounded-md py-6 px-4">
                 <div>
                     <p class="text-white text-lg font-lg font-semibold">Jumlah Guru</p>
-                    <p class="mt-5 font-bold text-2xl text-white">10</p>
+                    <p class="mt-5 font-bold text-2xl text-white"><?php echo $guru ?></p>
                 </div>
                 <!-- <i class="fas fa-user"> -->
             </div>
             <div class="bg-cyan-500 rounded-md py-6 px-4">
                 <div>
                     <p class="text-white text-lg font-lg font-semibold">Jumlah Mapel</p>
-                    <p class="mt-5 font-bold text-2xl text-white">14</p>
+                    <p class="mt-5 font-bold text-2xl text-white"><?php echo $mapel ?></p>
                 </div>
                 <!-- <i class="fas fa-user"> -->
             </div>
