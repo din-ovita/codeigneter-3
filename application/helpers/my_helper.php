@@ -1,5 +1,5 @@
 <?php
-function tampil_full_kelas_byid($id)
+function kelas($id)
 {
     $ci = &get_instance();
     $ci->load->database();

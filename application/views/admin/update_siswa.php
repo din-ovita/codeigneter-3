@@ -38,7 +38,7 @@
                             <div>
                                 <label for="gender" class="font-semibold">Gender</label><br>
                                 <select name="gender" id="gender" class="block rounded-sm p-2 w-full my-2 bg-gray-100 focus:outline-none focus:ring focus:ring-cyan-300">
-                                    <option selected value="<?php echo $data_siswa->gender?>"><?php echo $data_siswa->gender?></option>
+                                    <option selected value="<?php echo $data_siswa->gender ?>"><?php echo $data_siswa->gender ?></option>
                                     <option value="Laki-laki">Laki-laki</option>
                                     <option value="Perempuan">Perempuan</option>
                                 </select>
@@ -46,7 +46,7 @@
                             <div>
                                 <label for="kelas" class="font-semibold">Kelas</label><br>
                                 <select name="id_kelas" id="kelas" class="block rounded-sm p-2 w-full my-2 bg-gray-100 focus:outline-none focus:ring focus:ring-cyan-300">
-                                    <option selected value="<?php echo $data_siswa->id_kelas ?>"><?php echo tampil_full_kelas_byid($data_siswa->id_kelas) ?></option>
+                                    <option selected value="<?php echo $data_siswa->id_kelas ?>"><?php echo kelas($data_siswa->id_kelas) ?></option>
                                     <?php foreach ($kelas as $row) : ?>
                                         <option value="<?php echo $row->id ?>"><?php echo $row->tingkat_kelas . ' ' . $row->jurusan_kelas ?></option>
                                     <?php endforeach; ?>
