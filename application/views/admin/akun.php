@@ -49,7 +49,7 @@
             </div>
             <div class="shadow-lg p-5" style="margin: 3rem 2rem;">
                 <h2 class="text-center">Akun</h2>
-                <form class="mt-5"  action="<?php echo base_url('admin/aksi_ubah_akun')?>" enctype="multipart/form-data" method="post">
+                <form class="mt-5" action="<?php echo base_url('admin/aksi_ubah_akun') ?>" enctype="multipart/form-data" method="post">
                     <div class="row">
                         <div class="mb-3 col-6">
                             <label for="exampleInputEmail1" class="form-label">Email</label>
@@ -68,6 +68,12 @@
                         <div class="mb-3 col-6">
                             <label for="exampleInputEmail1" class="form-label">Konfimasi Password</label>
                             <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="confirm_password" placeholder="Konfirmasi Password">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-6">
+                            <label for="exampleInputEmail1" class="form-label">Foto Profil</label>
+                            <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="foto" placeholder="Konfirmasi Password">
                         </div>
                     </div>
                     <div class="mt-4 d-flex">

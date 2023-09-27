@@ -120,28 +120,60 @@ class Admin extends CI_Controller
         $konfirmasi_password = $this->input->post('confirm_password');
         $email = $this->input->post('email');
         $username = $this->input->post('username');
+        $foto = $this->upload_img('foto');
 
-        $data = array(
-            'email' => $email,
-            'username' => $username,
-        );
+        if ($foto[0] == false) {
+            $data = array(
+                'email' => $email,
+                'username' => $username,
+                'foto' => 'User.png',
+            );
 
-        if (!empty($password_baru)) {
-            if ($password_baru === $konfirmasi_password) {
-                $data['password'] = md5($password_baru);
+            if (!empty($password_baru)) {
+                if ($password_baru === $konfirmasi_password) {
+                    $data['password'] = md5($password_baru);
+                } else {
+                    $this->session->set_flashdata('message', 'Password baru dan konfirmasi password harus sama!');
+                    redirect(base_url('admin/akun'));
+                }
+            }
+
+            $this->session->set_userdata($data);
+            $update_result = $this->m_model->ubah_data('admin', $data, array('id' => $this->session->userdata('id')));
+
+            if ($update_result) {
+                redirect(base_url('admin/akun'));
             } else {
-                $this->session->set_flashdata('message', 'Password baru dan konfirmasi password harus sama!');
+                redirect(base_url('admin/akun'));
+            }
+        } else {
+            $data = array(
+                'email' => $email,
+                'username' => $username,
+                'foto' => $foto[1]
+            );
+
+            if (!empty($password_baru)) {
+                if ($password_baru === $konfirmasi_password) {
+                    $data['password'] = md5($password_baru);
+                } else {
+                    $this->session->set_flashdata('message', 'Password baru dan konfirmasi password harus sama!');
+                    redirect(base_url('admin/akun'));
+                }
+            }
+
+            $this->session->set_userdata($data);
+            $update_result = $this->m_model->ubah_data('admin', $data, array('id' => $this->session->userdata('id')));
+
+            if ($update_result) {
+                redirect(base_url('admin/akun'));
+            } else {
                 redirect(base_url('admin/akun'));
             }
         }
+    }
 
-        $this->session->set_userdata($data);
-        $update_result = $this->m_model->ubah_data('admin', $data, array('id' => $this->session->userdata('id')));
-
-        if ($update_result) {
-            redirect(base_url('admin/akun'));
-        } else {
-            redirect(base_url('admin/akun'));
-        }
+    public function dashboard_keuangan() {
+        $this->load->view('keuangan/dashboard');
     }
 }
