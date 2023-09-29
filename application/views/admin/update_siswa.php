@@ -53,6 +53,12 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="grid grid-cols-2 gap-10">
+                            <div>
+                                <label for="foto" class="font-semibold">Foto</label><br>
+                                <input type="file" id="foto" name="foto" required class="block rounded-sm p-2 w-full my-2 bg-gray-100 focus:outline-none focus:ring focus:ring-cyan-300">
+                            </div>
+                        </div>
                         <button class="w-full text-white uppercase font-bold py-3 mt-10 rounded-sm bg-cyan-500 focus:outline-none focus:ring focus:ring-cyan-300">UPDATE SISWA</button>
                     </form>
                 <?php endforeach; ?>
