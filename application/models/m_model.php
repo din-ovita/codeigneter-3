@@ -48,4 +48,23 @@ class M_model extends CI_Model
             return false;
         }
     }
+    public function get_by_nisn($nisn)
+    {
+        $this->db->select('id_siswa');
+        $this->db->from('siswa');
+        $this->db->where('nisn', $nisn);
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            $result = $query->row();
+            return $result->id_siswa;
+        } else {
+            return false;
+        }
+    }
+
+    public function total($table, $data)
+    {
+        return $this->db->get_where($table, $data)->num_rows();
+    }
 }

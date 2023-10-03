@@ -4,10 +4,15 @@
 
 <div class="bg-gray-800 w-56 h-[100vh] py-2 px-3 relative">
     <div class="mt-3 ">
-        <a href="http://localhost/codeigniter-3/admin/" class="font-bold uppercase text-cyan-600 text-xl">Admin</a>
+        <a href="http://localhost/codeigniter-3/admin/" class="font-bold uppercase text-cyan-600 text-xl">Admin akademik</a>
     </div>
     <ul class="mt-8">
-        <li class="bg-cyan-500 py-2 px-4">
+        <li class="py-2 px-4 my-2">
+            <a href="<?php echo base_url('admin/siswa') ?>" class="font-semibold text-gray-100 flex gap-3 items-center"><i class="fas fa-palette w-5 h-5"></i>
+                <p>Dasboard</p>
+            </a>
+        </li>
+        <li class="bg-cyan-500 py-2 px-4 my-2">
             <a href="<?php echo base_url('admin/siswa') ?>" class="font-semibold text-gray-100 flex gap-3 items-center"><i class="fas fa-user w-5 h-5"></i>
                 <p>Siswa</p>
             </a>

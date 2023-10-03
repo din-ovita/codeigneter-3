@@ -4,17 +4,17 @@
 
 <div class="bg-gray-800 w-56 h-[100vh] py-2 px-3 relative">
     <div class="mt-3 ">
-        <a href="http://localhost/codeigniter-3/admin/" class="font-bold uppercase text-cyan-600 text-xl">Admin</a>
+        <a href="http://localhost/codeigniter-3/admin/" class="font-bold uppercase text-cyan-600 text-xl">Admin Keuangan</a>
     </div>
     <ul class="mt-8">
-        <li class="bg-cyan-500 py-2 px-4 my-2">
-            <a href="<?php echo base_url('admin/dashboard_keuangan') ?>" class="font-semibold text-gray-100 flex gap-3 items-center"><i class="fas fa-user w-5 h-5"></i>
+        <li class="py-2 px-4 my-2 <?= $menu == 'dashboard' ? 'bg-cyan-500' : '' ?>">
+            <a href="<?php echo base_url('admin/dashboard_keuangan') ?>" class=" font-semibold text-gray-100 flex gap-3 items-center"><i class="fas fa-palette w-5 h-5"></i>
                 <p>Dashboard</p>
             </a>
         </li>
-        <li class="bg-transparent py-2 px-4 my-2">
-            <a href="" class="font-semibold text-gray-100 flex gap-3 items-center"><i class="fas fa-user w-5 h-5"></i>
-                <p>pp</p>
+        <li class=" py-2 px-4 my-2 <?= $menu == 'pembayaran' ? 'bg-cyan-500' : '' ?>">
+            <a href="<?php echo base_url('admin/pembayaran') ?>" class=" font-semibold text-gray-100 flex gap-3 items-center"><i class="fas fa-money-bill-wave w-5 h-5"></i>
+                <p>Pembayaran</p>
             </a>
         </li>
     </ul>

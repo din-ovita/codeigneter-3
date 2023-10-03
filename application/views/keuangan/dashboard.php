@@ -21,23 +21,20 @@
                     <div class="bg-cyan-500 rounded-md py-6 px-4">
                         <div>
                             <p class="text-white text-lg font-lg font-semibold capitalize ">jumlah pembayaran SPP</p>
-                            <!-- <p class="mt-5 font-bold text-2xl text-white"><?php echo $kelas ?></p> -->
+                            <p class="mt-5 font-bold text-2xl text-white"><?php echo $spp ?></p>
                         </div>
-                        <!-- <i class="fas fa-user"> -->
                     </div>
                     <div class="bg-cyan-500 rounded-md py-6 px-4">
                         <div>
                             <p class="text-white text-lg font-lg font-semibold capitalize">jumlah pembayaran uang gedung</p>
-                            <!-- <p class="mt-5 font-bold text-2xl text-white"><?php echo $siswa ?></p> -->
+                            <p class="mt-5 font-bold text-2xl text-white"><?php echo $uang_gedung ?></p>
                         </div>
-                        <!-- <i class="fas fa-user"> -->
                     </div>
                     <div class="bg-cyan-500 rounded-md py-6 px-4">
                         <div>
                             <p class="text-white text-lg font-lg font-semibold capitalize">jumlah pembayaran uang seragam</p>
-                            <!-- <p class="mt-5 font-bold text-2xl text-white"><?php echo $guru ?></p> -->
+                            <p class="mt-5 font-bold text-2xl text-white"><?php echo $uang_seragam ?></p>
                         </div>
-                        <!-- <i class="fas fa-user"> -->
                     </div>
                 </div>
 
