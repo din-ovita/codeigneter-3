@@ -63,6 +63,22 @@ class M_model extends CI_Model
         }
     }
 
+    public function get_by_kelas($tingkat, $jurusan)
+    {
+        $this->db->select('id');
+        $this->db->from('kelas');
+        $this->db->where('tingkat_kelas', $tingkat);
+        $this->db->where('jurusan_kelas', $jurusan);
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            $result = $query->row();
+            return $result->id;
+        } else {
+            return false;
+        }
+    }
+
     public function total($table, $data)
     {
         return $this->db->get_where($table, $data)->num_rows();
