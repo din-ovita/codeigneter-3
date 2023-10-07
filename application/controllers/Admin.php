@@ -558,7 +558,7 @@ class Admin extends CI_Controller
 
     public function export_pembayaran()
     {
-        $data['data_pemabayaran'] = $this->m_model->get_data('pembayaran')->result();
+        $data['data_pembayaran'] = $this->m_model->get_data('pembayaran')->result();
         $data['nama'] = 'pembayaran';
         if ($this->uri->segment(3) == "pdf") {
             $this->load->library('pdf');
@@ -567,6 +567,20 @@ class Admin extends CI_Controller
             $this->pdf->stream("data_pembayaran.pdf", array("Attachment" => false));
         } else {
             $this->load->view('keuangan/download-data', $data);
+        }
+    }
+
+    public function export_guru()
+    {
+        $data['guru'] = $this->m_model->get_data('guru')->result();
+        $data['nama'] = 'data_guru';
+        if ($this->uri->segment(3) == "pdf") {
+            $this->load->library('pdf');
+            $this->pdf->load_view('keuangan/export_data_pembayaran', $data);
+            $this->pdf->render();
+            $this->pdf->stream("data_guru.pdf", array("Attachment" => false));
+        } else {
+            $this->load->view('keuangan/pdf_guru', $data);
         }
     }
 }

@@ -14,7 +14,7 @@ header("Content-Desposition: attachment; filename=" . $nama . ".xls");
 </head>
 
 <body>
-    <h1>DATA PEMBAYARAN</h1>
+    <h1>DATA GURU</h1>
     <table style="font-size: 14px; font-weight: bold;">
         <tr>
             <td>Email</td>
@@ -32,15 +32,27 @@ header("Content-Desposition: attachment; filename=" . $nama . ".xls");
     <table border="1">
         <tr style="font-weight: bold;">
             <td>No</td>
-            <td>Jenis Pembayaran</td>
-            <td>Total Pembayaran</td>
+            <td>Nama Guru</td>
+            <td>NIK</td>
+            <td>Gender</td>
+            <td>Mapel</td>
+            <td>Kelas</td>
         </tr>
         <?php $no = 1;
-        foreach ($data_pembayaran as $key) { ?>
+        foreach ($guru as $key) { ?>
             <tr>
                 <td><?php echo $no++; ?></td>
-                <td><?php echo $key->jenis_pembayaran ?></td>
-                <td><?php echo $key->total ?></td>
+                <td><?php echo $key->nama_guru ?></td>
+                <td><?php echo $key->nik ?></td>
+                <td><?php echo $key->gender ?></td>
+                <td><?php echo mapel($key->id_mapel) ?></td>
+                <td>
+                    <?php if (empty(get_kelas($key->id))) : ?>
+                        Tidak menjadi walikelas
+                    <?php else : ?>
+                        <?php echo get_kelas($key->id) ?>
+                    <?php endif; ?>
+                </td>
             </tr>
         <?php } ?>
     </table>
